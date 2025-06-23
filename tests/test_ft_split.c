@@ -44,8 +44,3 @@ void test_ft_split()
 	}
 	printf("------------------------\n");
 }
-
-int main()
-{
-	test_ft_split();
-}

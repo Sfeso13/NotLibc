@@ -13,8 +13,3 @@ void test_ft_strmapi()
 	printf("original string : hello world with a null function ------- string mo3adala : %s\n", ft_strmapi("hello world", NULL));
 	printf("original string : (empty) ------- string mo3adala : %s\n", ft_strmapi("", f));
 }
-
-int main()
-{
-	test_ft_strmapi();
-}

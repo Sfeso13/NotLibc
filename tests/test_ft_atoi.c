@@ -1,4 +1,3 @@
-#include "../libft.h"
 #include "tests.h"
 
 void test_ft_atoi()
@@ -125,9 +124,4 @@ void test_ft_atoi()
 	assert(og == p);
 	
 	printf("All tests for ft_atoi passed!\n");
-}
-
-int main()
-{
-	test_ft_atoi();
 }

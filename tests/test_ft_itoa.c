@@ -9,8 +9,3 @@ void test_ft_itoa()
 	printf("attempting to convert 2147483647: %s\n", ft_itoa(2147483647));
 	printf("attempting to convert -2147483649: %s\n", ft_itoa(-2147483649));
 }
-
-int main()
-{
-	test_ft_itoa();
-}

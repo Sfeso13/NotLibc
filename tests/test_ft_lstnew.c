@@ -8,7 +8,3 @@ void test_ft_lstnew()
 	else
 		printf("failed\n");
 }
-int main()
-{
-	test_ft_lstnew();
-}

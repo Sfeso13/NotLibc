@@ -1,4 +1,6 @@
-CFLAGS := -Wall -Wextra -Werror
+CC := cc
+
+CFLAGS := -Wall -Wextra -Werror 
 
 SRC :=  ./test_ft_isalpha.c \
     	./test_ft_isdigit.c \
@@ -24,21 +26,33 @@ SRC :=  ./test_ft_isalpha.c \
     	./test_ft_calloc.c \
     	./test_ft_strdup.c \
 
-OBJS := $(SRC:.c=.o)
+OBJS := $(addprefix objs/, $(SRC:.c=.o))
 
-NAME := libtst.a
+NAME := tests
 
-all : $(NAME)
+LIBFT_DIR := ..
+LIBFT := $(LIBFT_DIR)/libft.a
 
-$(NAME) : $(OBJS) tests.h
-	ar -rcs $@ $(OBJS)
+all: $(LIBFT) $(NAME)
 
-clean :
-	rm -f $(OBJS)
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR)
 
-fclean : clean
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+objs/%.o: %.c
+	mkdir -p objs
+	$(CC) $(CFLAGS) -c $< -o $@ -MMD
+
+clean:
+	rm -rf objs
+	$(MAKE) -C $(LIBFT_DIR) clean
+
+fclean: clean
 	rm -f $(NAME)
+	$(MAKE) -C $(LIBFT_DIR) fclean
 
-re : fclean all
+re: fclean all
 
-.PHONY: clean
+-include $(OBJS:.o=.d)

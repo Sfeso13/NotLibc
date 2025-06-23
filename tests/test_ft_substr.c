@@ -12,8 +12,3 @@ void	test_ft_substr()
 	printf("testing negative len : \n string : hello world ------ substring : %s\n",ft_substr("hello world", 5, -50));
 	printf("testing negative start : \n string : hello world ------ substring : %s\n",ft_substr("hello world", -5, 2));
 }
-
-int main()
-{
-	test_ft_substr();
-}

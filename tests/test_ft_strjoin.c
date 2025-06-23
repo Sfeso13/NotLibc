@@ -8,8 +8,3 @@ void	test_ft_strjoin()
 	printf("normal behaviour : \n joined string : %s\n", ft_strjoin("\0", "world"));
 	printf("null : \n joined string : %s\n", ft_strjoin(NULL, "world"));
 }
-
-int main()
-{
-	test_ft_strjoin();
-}

@@ -9,8 +9,3 @@ void test_ft_strtrim()
 	printf("empty string : \n original string : (empty) ------ trimmed string: %s\n", ft_strtrim("" , " 	"));
 	printf("empty set : \n original string : hello world ------ trimmed string: %s\n", ft_strtrim(" hello world " , ""));
 }
-
-int main ()
-{
-	test_ft_strtrim();
-}

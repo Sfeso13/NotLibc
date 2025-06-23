@@ -1,4 +1,4 @@
-#include "../libft.h"
+// #include "../libft.h"
 #include "tests.h"
 
 void test_ft_strlcpy()
@@ -23,9 +23,4 @@ void test_ft_strlcpy()
 	assert(memcmp(dst1, dst, 5) == 0);
 		
 	printf("All tests for ft_strlcpy passed!\n");
-}
-
-int main()
-{
-	test_ft_strlcpy();
 }
