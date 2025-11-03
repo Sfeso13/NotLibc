@@ -92,38 +92,3 @@ if [ ! -f "$c_file" ]; then
 else
     echo "$c_file already exists"
 fi
-
-# Update the Makefile to include the new .c file in the SRC variable
-makefile="Makefile"
-
-if ! grep -q "$c_file" "$makefile"; then
-    echo "Adding $c_file to SRC in $makefile"
-
-    # Create a temporary file for the modified Makefile
-    temp_makefile=$(mktemp)
-
-    # Flag to check if we are in the SRC variable section
-    in_src_section=false
-
-    # Read the Makefile and process lines
-    while IFS= read -r line; do
-        echo "$line" >> "$temp_makefile"  # Copy other lines
-
-        # Check if we are at the SRC declaration line
-        if [[ "$line" =~ ^SRC[[:space:]]*:= ]]; then
-            in_src_section=true
-        fi
-
-        # If in SRC section, check for the end of the line
-        if $in_src_section && [[ "$line" != *"\\\\"* ]]; then
-            echo "      ./$c_file \\" >> "$temp_makefile"  # Add the new .c file
-            in_src_section=false  # Stop after adding to avoid multiple additions
-        fi
-    done < "$makefile"
-
-    # Overwrite the original Makefile with the modified temp file
-    mv "$temp_makefile" "$makefile"
-    echo "$c_file added to SRC in $makefile"
-else
-    echo "$c_file is already in SRC in $makefile"
-fi
