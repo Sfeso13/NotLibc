@@ -1,6 +1,6 @@
 #include "../libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_putnbr_fd(int n, int fd, int bytes)
 {
 	long	x;
 	char	c;
@@ -8,11 +8,12 @@ void	ft_putnbr_fd(int n, int fd)
 	x = n;
 	if (x < 0)
 	{
-		write(fd, "-", 1);
+		bytes += write(fd, "-", 1);
 		x *= -1;
 	}
 	if (x / 10 > 0)
-		ft_putnbr_fd(x / 10, fd);
+		bytes = ft_putnbr_fd(x / 10, fd, bytes);
 	c = x % 10 + '0';
-	write(fd, &c, 1);
+	bytes += write(fd, &c, 1);
+  return bytes;
 }
