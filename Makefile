@@ -16,8 +16,8 @@ STR_SRCS := ft_striteri.c ft_strmapi.c ft_split.c ft_strtrim.c ft_strjoin.c ft_s
             ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c  ft_strrchr.c ft_strncmp.c \
             ft_strnstr.c ft_strdup.c
 
-STRUCT_SRC := ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c \
-		          ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
+STRUCT_SRC := ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
+		          ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 
 PRNT_UTILS_SRCS := flags.c conversion.c ft_puthex.c ft_puthexcase.c ft_putunsign.c 
 
