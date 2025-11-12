@@ -42,7 +42,7 @@ NotLibc is designed to be:
 - ✅ Number utilities: `ft_atoi`, `ft_itoa`
 - ✅ String manipulation: `ft_strlen`, `ft_strdup`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_striteri`, `ft_strmapi`, `ft_toupper`, `ft_tolower`
 - ✅ Linked list utilities: `ft_lstnew`, `ft_lstadd_front`, `ft_lstadd_back`, `ft_lstsize`, `ft_lstlast`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`
-- ✅ A bonus shell script
+- ✅ A personal shell script that allowed me to automate boring tasks in the creation of this DEFINITELY not libc library
 ---
 
 ## 🗂️ Project Structure
@@ -169,4 +169,19 @@ Compile with:
 ```bash
 cc main.c -L. -lft -I includes
 ```
+
+**BONUS STUFF:**
+
+In case you find yourself wanting to expand this library further, you can easily do so with the help of `pls.sh`
+1. **Make sure the script is executable:**
+```bash
+chmod +x pls.sh
+```
+2. **Run the script with a function prototype as a string:**
+```bash
+./pls.sh "int ft_strlen(const char *s);"
+```
+and voila, you have:
+ - your header updated with the new prototype `int ft_strlen(const char *s)`.
+ - your .c is created and ready to use.
 
