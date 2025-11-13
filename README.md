@@ -4,24 +4,21 @@
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![OpenSource](https://img.shields.io/badge/Open%20Source-4ABF4B?style=for-the-badge)
 
-**NotLibc** began as an implementation of **42’s Libft**, but has since evolved into a more modular and practical version I maintained independently throughout my cursus.
+**NotLibc** began as an implementation of **42’s Libft**, but has since evolved into a more modular, practical and slightly overengineered version I maintained independently throughout my cursus.
 
 ---
 
 ## 📋 Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Tech Stack](#tech-stack)
-- [Authors](#authors)
+- [About](#-about)
+- [Features](#-features)
+- [Project Structure](#-project-structure)
+- [Setup](#-setup)
+- [Usage](#-usage)
 
 ---
 
-## 🧩 About
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Film%20Projector.png" alt="Film Projector" width="25" height="25" /> About
 
 NotLibc is designed to be:
 
@@ -31,7 +28,7 @@ NotLibc is designed to be:
 
 ---
 
-## ✨ Features
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Control%20Knobs.png" alt="Control Knobs" width="25" height="25" /> Features
 
 - ✅ Character checking: `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`
 - ✅ Memory manipulation: `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`
@@ -42,7 +39,7 @@ NotLibc is designed to be:
 - ✅ A personal shell script that allowed me to automate boring tasks in the creation of this DEFINITELY not libc library
 ---
 
-## 🗂️ Project Structure
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Card%20File%20Box.png" alt="Card File Box" width="25" height="25" /> Project Structure
 <details>
    <summary>Click to expand</summary>
   
@@ -127,7 +124,7 @@ All functions are modular and follow **consistent naming conventions**, making i
 
 ---
 
-## ⚙️ Installation
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Gear.png" alt="Gear" width="25" height="25" /> Setup
 
 1. **Clone the repository**
 ```bash
@@ -149,7 +146,7 @@ make re         # rebuild everything
 
 ---
 
-## 🚀 Usage
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Abacus.png" alt="Abacus" width="25" height="25" /> Usage
 
 Include the library in your project:
 ```c
