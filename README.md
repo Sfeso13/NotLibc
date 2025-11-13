@@ -59,7 +59,6 @@ NotLibc is designed to be:
   │   ├── ft_putnbr_fd.c
   │   ├── get_next_line/
   │   │   ├── get_next_line.c
-  │   │   ├── get_next_line_utils.c
   │   │   └── get_next_line.h
   │   └── ft_printf/
   │       ├── ft_printf.c
