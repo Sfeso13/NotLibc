@@ -23,14 +23,18 @@ PRNT_UTILS_SRCS := flags.c conversion.c ft_puthex.c ft_puthexcase.c ft_putunsign
 
 PRNT_SRCS := ft_printf.c
 
+GNL_SRCS := get_next_line.c
+
 OBJS := $(addprefix objs/, $(IO_SRCS:.c=.o)) $(addprefix objs/, $(CHAR_SRCS:.c=.o)) \
         $(addprefix objs/, $(MEM_SRCS:.c=.o)) $(addprefix objs/, $(NUM_SRCS:.c=.o)) \
         $(addprefix objs/, $(STR_SRCS:.c=.o)) $(addprefix objs/, $(STRUCT_SRC:.c=.o)) \
-				$(addprefix objs/, $(PRNT_SRCS:.c=.o)) $(addprefix objs/, $(PRNT_UTILS_SRCS:.c=.o))
+				$(addprefix objs/, $(PRNT_SRCS:.c=.o)) $(addprefix objs/, $(PRNT_UTILS_SRCS:.c=.o)) \
+				$(addprefix objs/, $(GNL_SRCS:.c=.o))
 
+GNL_SRCS := $(addprefix get_next_line/, $(GNL_SRCS))
 PRNT_UTILS_SRCS:= $(addprefix utils/, $(PRNT_UTILS_SRCS))
 PRNT_SRCS:= $(addprefix ft_printf/, $(PRNT_SRCS)) $(addprefix ft_printf/, $(PRNT_UTILS_SRCS))
-IO_SRCS := $(addprefix io_utils/, $(IO_SRCS)) $(addprefix io_utils/, $(PRNT_SRCS))
+IO_SRCS := $(addprefix io_utils/, $(IO_SRCS)) $(addprefix io_utils/, $(PRNT_SRCS)) $(addprefix io_utils/, $(GNL_SRCS))
 CHAR_SRCS := $(addprefix char_checks/, $(CHAR_SRCS))
 MEM_SRCS := $(addprefix mem_manipulation/, $(MEM_SRCS))
 NUM_SRCS := $(addprefix num_manipulation/, $(NUM_SRCS))
@@ -39,44 +43,49 @@ STRUCT_SRC := $(addprefix struct_utils/, $(STRUCT_SRC))
 
 all : $(NAME)
 
-$(NAME) : $(OBJS) 
+$(NAME) : $(OBJS)
 
-objs/%.o : io_utils/ft_printf/utils/%.c libft.h
+objs/%.o : io_utils/ft_printf/utils/%.c
 	mkdir -p objs/
 	$(CC) $(CFLAGS) -c $< -o $@ -MMD
 	ar rcs $(NAME) $@
 
-objs/%.o : io_utils/ft_printf/%.c libft.h
+objs/%.o : io_utils/ft_printf/%.c
 	mkdir -p objs/
 	$(CC) $(CFLAGS) -c $< -o $@ -MMD
 	ar rcs $(NAME) $@
 
-objs/%.o : io_utils/%.c libft.h
+objs/%.o : io_utils/get_next_line/%.c
 	mkdir -p objs/
 	$(CC) $(CFLAGS) -c $< -o $@ -MMD
 	ar rcs $(NAME) $@
 
-objs/%.o : char_checks/%.c libft.h
+objs/%.o : io_utils/%.c 
 	mkdir -p objs/
 	$(CC) $(CFLAGS) -c $< -o $@ -MMD
 	ar rcs $(NAME) $@
 
-objs/%.o : num_manipulation/%.c libft.h
+objs/%.o : char_checks/%.c 
 	mkdir -p objs/
 	$(CC) $(CFLAGS) -c $< -o $@ -MMD
 	ar rcs $(NAME) $@
 
-objs/%.o : mem_manipulation/%.c libft.h
+objs/%.o : num_manipulation/%.c
 	mkdir -p objs/
 	$(CC) $(CFLAGS) -c $< -o $@ -MMD
 	ar rcs $(NAME) $@
 
-objs/%.o : str_manipulation/%.c libft.h
+objs/%.o : mem_manipulation/%.c
 	mkdir -p objs/
 	$(CC) $(CFLAGS) -c $< -o $@ -MMD
 	ar rcs $(NAME) $@
 
-objs/%.o : struct_utils/%.c libft.h
+objs/%.o : str_manipulation/%.c
+	mkdir -p objs/
+	$(CC) $(CFLAGS) -c $< -o $@ -MMD
+	ar rcs $(NAME) $@
+
+objs/%.o : struct_utils/%.c
 	mkdir -p objs/
 	$(CC) $(CFLAGS) -c $< -o $@ -MMD
 	ar rcs $(NAME) $@
