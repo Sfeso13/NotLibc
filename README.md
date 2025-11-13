@@ -4,10 +4,7 @@
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![OpenSource](https://img.shields.io/badge/Open%20Source-4ABF4B?style=for-the-badge)
 
-**NotLibc** is a custom implementation of essential C standard library functions, built from scratch.  
-It provides foundational utilities for **strings, memory, I/O, character checks, numbers, and linked lists**, allowing for easy handling of common C tasks without relying on the standard library.  
-
-This project is based on **42's Libft project**!
+**NotLibc** began as an implementation of **42’s Libft**, but has since evolved into a more modular and practical version I maintained independently throughout my cursus.
 
 ---
 
