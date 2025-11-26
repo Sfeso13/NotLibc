@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "../../../libft.h"
 
 int	plus_flag(const char **s, int pt, int *x, int *is_pls)
 {
@@ -15,13 +15,13 @@ int	plus_flag(const char **s, int pt, int *x, int *is_pls)
 	}
 	if ((**s == 'd' || **s == 'i') && pt >= 0 && p == 0 && *is_pls)
 	{
-		*x += ft_putchar('+', 1);
-		*x += ft_putnbr(pt, 1, 0);
+		*x += ft_putchar_fd('+', 1);
+		*x += ft_putnbr_fd(pt, 1, 0);
 		return (1);
 	}
 	else if ((**s == 'd' || **s == 'i') && pt < 0 && p == 0 && *is_pls)
 	{
-		*x += ft_putnbr(pt, 1, 0);
+		*x += ft_putnbr_fd(pt, 1, 0);
 		return (1);
 	}
 	return (p);
@@ -45,12 +45,12 @@ int	space_flag(const char **s, int pt, int *x, int *is_pls)
 	}
 	if ((**s == 'd' || **s == 'i') && pt >= 0 && p == 0 && !(*is_pls))
 	{
-		*x += ft_putchar(' ', 1);
-		*x += ft_putnbr(pt, 1, 0);
+		*x += ft_putchar_fd(' ', 1);
+		*x += ft_putnbr_fd(pt, 1, 0);
 		return (1);
 	}
 	if ((**s == 'd' || **s == 'i') && pt < 0 && p == 0 && !(*is_pls))
-		return (*x += ft_putnbr(pt, 1, 0), 1);
+		return (*x += ft_putnbr_fd(pt, 1, 0), 1);
 	return (p);
 }
 
@@ -71,10 +71,10 @@ int	hash_flag(const char **s, unsigned int pt, int *x, int *is_pls)
 			p = space_flag(s, (int)pt, x, is_pls);
 	}
 	if (**s == 'x' && pt != 0)
-		return (*x += ft_putstr("0x", 1), *x += ft_puthexcase(pt, 1, 0), 1);
+		return (*x += ft_putstr_fd("0x", 1), *x += ft_puthexcase(pt, 1, 0), 1);
 	else if (**s == 'X' && pt != 0)
 	{
-		*x += ft_putstr("0X", 1);
+		*x += ft_putstr_fd("0X", 1);
 		*x += ft_puthexcase(pt, 1, 1);
 		return (1);
 	}

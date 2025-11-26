@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../../libft.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -18,7 +18,7 @@ int	ft_printf(const char *str, ...)
 		}
 		if (*str && *str != '%')
 		{
-			x += ft_putchar(*str, 1);
+			x += ft_putchar_fd(*str, 1);
 			str++;
 		}
 	}

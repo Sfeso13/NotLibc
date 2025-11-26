@@ -3,6 +3,13 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
+# include <sys/select.h>
+# include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 typedef struct s_list
 {
@@ -54,5 +61,19 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*get_next_line(int fd);
+
+
+//				PRINTF				//
+
+int	ft_printf(const char *str, ...);
+int		ft_putunsign(int n, int fd);
+int		ft_puthex(size_t x, int fd);
+int		ft_puthexcase(unsigned int x, int fd, int size);
+int		flags(const char **str, va_list ptr, int *x);
+void	conv_time_bonus(const char **str, va_list ptr, int *x);
+int		conversion_bonus(const char *str, va_list pt);
+int		hash_flag(const char **s, unsigned int pt, int *x, int *is_pls);
+int		plus_flag(const char **s, int pt, int *x, int *is_pls);
+int		space_flag(const char **s, int pt, int *x, int *is_pls);
 
 #endif
